@@ -13,7 +13,7 @@ Siga os passos abaixo para executar a aplicação em sua máquina:
 
 3. Acesse a pasta do projeto:
    ```bash
-   cd catalogo
+   cd app-catalogo
    ```
 
 4. Inicialize o ambiente virtual:
