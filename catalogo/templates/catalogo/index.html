@@ -10,39 +10,43 @@
 </head>
 <body>
 
-    <div class="container">
+   <div class="container">
 
-        <h1>🎬 Catálogo de Filmes e Séries</h1>
+    <h1>🎬 Catálogo de Filmes e Séries</h1>
 
-        {% if obras %}
+    <a class="btn" href="{% url 'catalogo:cadastro' %}">
+        Nova obra
+    </a>
 
-            {% for obra in obras %}
+    {% if obras %}
 
-                <div class="card">
+        {% for obra in obras %}
 
-                    <h2>{{ obra.titulo }}</h2>
+            <div class="card">
 
-                    <p><strong>Tipo:</strong> {{ obra.tipo }}</p>
+                <h2>{{ obra.titulo }}</h2>
 
-                    <p><strong>Ano:</strong> {{ obra.ano }}</p>
+                <p><strong>Tipo:</strong> {{ obra.tipo }}</p>
 
-                    <p><strong>Gênero:</strong> {{ obra.genero }}</p>
+                <p><strong>Ano:</strong> {{ obra.ano }}</p>
 
-                    <a class="btn" href="{% url 'catalogo:detalhes' obra.id %}">
-                        Ver detalhes
-                    </a>
+                <p><strong>Gênero:</strong> {{ obra.genero }}</p>
 
-                </div>
+                <a class="btn" href="{% url 'catalogo:detalhes' obra.id %}">
+                    Ver detalhes
+                </a>
+            </div>
 
-            {% endfor %}
+        {% endfor %}
 
-        {% else %}
+    {% else %}
 
-            <p class="mensagem">Nenhuma obra encontrada.</p>
+        <p class="mensagem">Nenhuma obra encontrada.</p>
 
-        {% endif %}
+    {% endif %}
 
-    </div>
+</div>
+
 
 </body>
 </html>

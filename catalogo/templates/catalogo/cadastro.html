@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Obra</title>
+</head>
+<body>
+
+<h1>Cadastrar nova obra</h1>
+
+<p>
+    Preencha os dados abaixo para adicionar uma nova obra ao catálogo.
+</p>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">
+        Cadastrar obra
+    </button>
+</form>
+
+<br>
+
+<a href="{% url 'catalogo:index' %}">
+    Voltar ao catálogo
+</a>
+
+</body>
+</html>
